@@ -8,10 +8,19 @@ import style from "./styles.module.css";
 import logo from "../../assets/images/logo.png";
 
 function Home() {
-  api.get("/character");
+  const getAllItems = async () => {
+    const items = await api.get("/character");
+    return items;
+  };
+
   return (
     <div>
-      <img className={style.logo} src={logo} alt="" />
+      <img
+        onClick={() => getAllItems()}
+        className={style.logo}
+        src={logo}
+        alt=""
+      />
       <h1 className={style.title}>Characters from Rick and Morty</h1>
       <CharacterItem name="rick" />
       <CharacterItem name="rick" />
