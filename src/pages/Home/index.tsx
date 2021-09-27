@@ -1,11 +1,14 @@
 // ----------------HOME
 
+import api from "../../services/api";
 import React from "react";
+
 import CharacterItem from "../../components/CharacterItem";
 import style from "./styles.module.css";
 import logo from "../../assets/images/logo.png";
 
 function Home() {
+  api.get("/character");
   return (
     <div>
       <img className={style.logo} src={logo} alt="" />
