@@ -1,16 +1,19 @@
 // ----------------HOME
 
-import api from "../../services/api";
 import React from "react";
+import api from "../../services/api";
+import { useState } from "react";
 
 import CharacterItem from "../../components/CharacterItem";
 import style from "./styles.module.css";
 import logo from "../../assets/images/logo.png";
 
 function Home() {
+  const [items, setItems] = useState(null);
+
   const getAllItems = async () => {
-    const items = await api.get("/character");
-    return items;
+    const { data } = await api.get("/character");
+    setItems(data.results);
   };
 
   return (
