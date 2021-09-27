@@ -5,7 +5,7 @@ function App() {
   return (
     <div>
       <h1>meu site com react!!!</h1>
-      <CharacterItem />
+      <CharacterItem name="rick" />
     </div>
   );
 }
